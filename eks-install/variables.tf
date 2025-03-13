@@ -25,6 +25,7 @@ variable "private_subnet_cidrs" {
 variable "public_subnet_cidrs" {
   description = "CIDR blocks for public subnets"
   type        = list(string)
+ default     = ["172.32.0.0/21"]
 }
 
 variable "cluster_name" {
