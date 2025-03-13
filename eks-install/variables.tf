@@ -1,31 +1,30 @@
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "ap-south-1"
+  default     = "ap-south-1c"
 }
 
 variable "vpc_cidr" {
   description = "CIDR block for VPC"
   type        = string
-  default     = "10.0.0.0/16"
+  default     = "172.31.0.0/16"
 }
 
 variable "availability_zones" {
   description = "Availability zones"
   type        = list(string)
-  default     = ["us-west-2a", "us-west-2b", "us-west-2c"]
+  default     = ["ap-south-1c"]
 }
 
 variable "private_subnet_cidrs" {
   description = "CIDR blocks for private subnets"
   type        = list(string)
-  default     = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  default     = ["172.31.0.0/20"]
 }
 
 variable "public_subnet_cidrs" {
   description = "CIDR blocks for public subnets"
   type        = list(string)
-  default     = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
 }
 
 variable "cluster_name" {
@@ -53,7 +52,7 @@ variable "node_groups" {
   }))
   default = {
     general = {
-      instance_types = ["t3.medium"]
+      instance_types = ["t3.large"]
       capacity_type  = "ON_DEMAND"
       scaling_config = {
         desired_size = 2
