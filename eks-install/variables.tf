@@ -19,13 +19,13 @@ variable "availability_zones" {
 variable "private_subnet_cidrs" {
   description = "CIDR blocks for private subnets"
   type        = list(string)
-  default     = ["172.31.0.0/20","172.31.0.0/20","172.31.0.0/20"]
+  default     = ["172.31.0.0/20","172.32.0.0/20","172.33.0.0/20"]
 }
 
 variable "public_subnet_cidrs" {
   description = "CIDR blocks for public subnets"
   type        = list(string)
- default     = ["172.31.0.0/20","172.31.0.0/20","172.31.0.0/20"]
+ default     =  ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
 }
 
 variable "cluster_name" {
